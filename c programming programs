@@ -1,0 +1,472 @@
+1.Calculator
+
+
+#include<stdio.h>
+int main()
+{
+	int a,b,n,sum=0;
+	printf("enter 1st num: ");
+	scanf("%d",&a);
+	printf("enter 2nd num: ");
+	scanf("%d",&b);
+	printf("1.Addition \n2.Subtraction \n3.Multiplication \n4.Division");
+	printf("\nenter your choice: ");
+	scanf("%d",&n);
+	if(n==1)
+	{
+		sum=a+b;
+		printf("Adiition is: %d",sum);
+	}
+	else if(n==2)
+	{
+		sum=a-b;
+		printf("subtraction is: %d",sum);
+	}
+	else if(n==3)
+	{
+		sum=a*b;
+		printf("multiplicatin is: %d",sum);
+	}
+	else if(n==4)
+	{
+		sum=a/b;
+		printf("division is: %d",sum);
+	}
+}
+
+2.Generate a number series
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int N, i;
+    printf("Enter the value of N (limit): ");
+    scanf("%d", &N);
+    printf("\n");
+    for(i=1; i<=N; i++)
+    {
+        if(i==N)
+            printf("%d", i);
+        else
+            printf("%d,", i);
+    }
+    getch();
+    return 0;
+}
+
+3.Reverse a number and array
+
+
+#include <stdio.h>
+#define N 1000
+
+int main() {
+    int arr[N];
+
+    int n;
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+    printf("Enter an array: ");
+    for (int i = 0; i< n; i++){
+        scanf("%d", &arr[i]);
+    }
+    printf("Reversed array: ");
+    for (int i = n-1; i>=0; i--){
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+
+4.Decimal to binary
+
+
+ #include <stdio.h>
+int main() 
+{
+    int a[10], number, i, j;
+    printf("\n Please Enter the Number You want to Convert  :  ");
+    scanf("%d", &number);
+
+    for(i = 0; number > 0; i++)
+    {
+        a[i] = number % 2;
+        number = number / 2;
+    }
+
+    printf("\n Binary Number of a Given Number =  ");
+    for(j = i - 1; j >= 0; j--)  {
+        printf(" %d ", a[j]);
+    }
+    printf("\n");
+    return 0;
+}
+
+5.Square and cube of a decimal
+
+
+#include <stdio.h>
+int main(){
+    int num, square, cube;
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+    square = num * num;
+    cube = num * num * num;
+    printf("Square of %d is: %d \n", num, square);
+    printf("Cube of %d is: %d", num, cube);
+
+    return 0;
+}
+
+6.voting
+
+#include<stdio.h>
+int main()
+{
+     int age;
+     printf("Enter Age of Person : ");
+     scanf("%d",&age);
+     if(age>17)
+          printf("\nPerson is Eligible for Voting");
+     else
+          printf("\nPerson is NOT Eligible for Voting");
+     return 0;
+}
+
+7.odd Or even
+
+#include <stdio.h>
+int main() {
+    int num;
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+    if(num % 2 == 0)
+        printf("%d is even.", num);
+    else
+        printf("%d is odd.", num);
+
+    return 0;
+}
+
+8.pattern
+
+https://www.programiz.com/c-programming/examples/pyramid-pattern
+
+9.multiplication table
+
+#include <stdio.h>
+int main() {
+  int n;
+  printf("Enter an integer: ");
+  scanf("%d", &n);
+
+  for (int i = 1; i <= 10; ++i) {
+    printf("%d * %d = %d \n", n, i, n * i);
+  }
+  return 0;
+}
+
+
+10.Find number of negative number in a string
+
+
+#include <stdio.h>
+void main()
+{
+    int num;
+
+    printf("Input a number :");
+    scanf("%d", &num);
+    if (num >= 0)
+        printf("%d is a positive number \n", num);
+    else
+        printf("%d is a negative number \n", num);
+}
+
+
+11.Transpose of a matrix
+
+#include <stdio.h>
+int main() {
+  int a[10][10], transpose[10][10], r, c;
+  printf("Enter rows and columns: ");
+  scanf("%d %d", &r, &c);
+  printf("\nEnter matrix elements:\n");
+  for (int i = 0; i < r; ++i)
+  for (int j = 0; j < c; ++j) {
+    printf("Enter element a%d%d: ", i + 1, j + 1);
+    scanf("%d", &a[i][j]);
+  }
+  printf("\nEntered matrix: \n");
+  for (int i = 0; i < r; ++i)
+  for (int j = 0; j < c; ++j) {
+    printf("%d  ", a[i][j]);
+    if (j == c - 1)
+    printf("\n");
+  }
+  for (int i = 0; i < r; ++i)
+  for (int j = 0; j < c; ++j) {
+    transpose[j][i] = a[i][j];
+  }
+  printf("\nTranspose of the matrix:\n");
+  for (int i = 0; i < c; ++i)
+  for (int j = 0; j < r; ++j) {
+    printf("%d  ", transpose[i][j]);
+    if (j == r - 1)
+    printf("\n");
+  }
+  return 0;
+}
+
+12.Remove duplicate from the string
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+  	char str[100];
+  	int i, j, k;
+
+  	printf("\n Please Enter any String :  ");
+  	gets(str);
+
+  	for(i = 0; i < strlen(str); i++)
+  	{
+  		for(j = i + 1; str[j] != '\0'; j++)
+  		{
+  			if(str[j] == str[i])  
+			{
+  				for(k = j; str[k] != '\0'; k++)
+				{
+					str[k] = str[k + 1];
+				}
+ 			}
+		}
+	}
+
+	printf("\n The Final String after Removing All Duplicates = %s ", str);
+
+  	return 0;
+}
+
+13.write a program to search the elements from an array and display it's position
+
+
+#include <stdio.h>
+
+#define MAX_SIZE 100  // Maximum array size
+
+int main()
+{
+    int arr[MAX_SIZE];
+    int size, i, toSearch, found;
+
+    printf("Enter size of array: ");
+    scanf("%d", &size);
+    printf("Enter elements in array: ");
+    for(i=0; i<size; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("\nEnter element to search: ");
+    scanf("%d", &toSearch);
+
+
+    found = 0; 
+
+    for(i=0; i<size; i++)
+    {
+
+        if(arr[i] == toSearch)
+        {
+            found = 1;
+            break;
+        }
+    }
+    if(found == 1)
+    {
+        printf("\n%d is found at position %d", toSearch, i + 1);
+    }
+    else
+    {
+        printf("\n%d is not found in the array", toSearch);
+    }
+
+    return 0;
+}
+
+14.find the second maximum of an array
+
+#include<stdio.h>
+void main(){
+   int i,j,a,n,counter,ave,number[30];
+   printf ("Enter the value of N
+");
+   scanf ("%d", &n);
+   printf ("Enter the numbers 
+");
+   for (i=0; i<n; ++i)
+      scanf ("%d",&number[i]);
+   for (i=0; i<n; ++i){
+      for (j=i+1; j<n; ++j){
+         if (number[i] < number[j]){
+            a = number[i];
+            number[i] = number[j];
+            number[j] = a;
+         }
+      }
+   }
+   printf ("The numbers arranged in descending order are given below
+");
+   for (i=0; i<n; ++i)
+      printf ("%10d
+",number[i]);
+   printf ("The 2nd largest number is = %d
+", number[1]);
+   printf ("The 2nd smallest number is = %d
+", number[n-2]);
+   ave = (number[1] +number[n-2])/2;
+   counter = 0;
+   for (i=0; i<n; ++i){
+      if (ave==number[i])
+         ++counter;
+   }
+   if (counter==0)
+      printf("The average of 2nd largest & 2nd smallest is not in the array
+");
+   else
+      printf("The average of 2nd largest & 2nd smallest in array is %d in numbers
+", counter);
+}
+
+15.length of a string
+
+#include <stdio.h>
+int main() {
+    char s[] = "Programming is fun";
+    int i;
+
+    for (i = 0; s[i] != '\0'; ++i);
+
+    printf("Length of the string: %d", i);
+    return 0;
+}
+
+
+16. sum of elements in an array
+
+#include <stdio.h>    
+int main()    
+{         
+    int arr[] = {1, 2, 3, 4, 5};     
+    int sum = 0;    
+    int length = sizeof(arr)/sizeof(arr[0]);    
+    for (int i = 0; i < length; i++) {     
+       sum = sum + arr[i];    
+    }      
+    printf("Sum of all the elements of an array: %d", sum);    
+    return 0;    
+}  
+
+17.Find the sum of digits (143=1+4+3= 8) 
+
+
+
+#include<stdio.h>  
+ int main()    
+{    
+int n,sum=0,m;    
+printf("Enter a number:");    
+scanf("%d",&n);    
+while(n>0)    
+{    
+m=n%10;    
+sum=sum+m;    
+n=n/10;    
+}    
+printf("Sum is=%d",sum);    
+return 0;  
+}   
+
+
+18.simple Intrest
+
+#include <stdio.h>
+int main()
+{
+    float principle, time, rate, SI;
+    printf("Enter principle (amount): ");
+    scanf("%f", &principle);
+    printf("Enter time: ");
+    scanf("%f", &time);
+    printf("Enter rate: ");
+    scanf("%f", &rate);
+    SI = (principle * time * rate) / 100;
+    printf("Simple Interest = %f", SI);
+    return 0;
+}
+
+19.Merge 2 arrays
+
+#include <stdio.h>
+int main()
+{
+    int n1,n2,n3;            //Array Size Declaration
+    int a[10000], b[10000], c[20000];
+    printf("Enter the size of first array: ");
+    scanf("%d",&n1);
+    printf("Enter the array elements: ");
+    for(int i = 0; i < n1; i++)      
+       scanf("%d", &a[i]);
+    printf("Enter the size of second array: ");
+        scanf("%d",&n2);
+    printf("Enter the array elements: ");
+    for(int i = 0; i < n2; i++)      
+       scanf("%d", &b[i]);
+    n3 = n1 + n2;
+    for(int i = 0; i < n1; i++)
+       c[i] = a[i];
+    for(int i = 0; i < n2; i++)     
+        c[i + n1] = b[i];
+
+    printf("The merged array: ");
+    for(int i = 0; i < n3; i++)
+        printf("%d ", c[i]);        //Print the merged array
+
+    printf("\nFinal array after sorting: ");
+    for(int i = 0; i < n3; i++){
+        int temp;
+        for(int j = i + 1; j < n3; j++) {
+            if(c[i] > c[j]) {
+                temp = c[i];
+                c[i] = c[j];
+                c[j] = temp;
+            }
+        }
+    }   
+    for(int i = 0; i < n3 ; i++)       //Print the sorted Array 
+        printf(" %d ",c[i]);
+    return 0;   
+}
+
+20.Find the sum of series
+Shell program
+
+#include<stdio.h>
+int main() {
+	int n,i;
+	int sum=0;
+	printf("Enter the n i.e. max values of series: ");
+	scanf("%d",&n);
+	sum = (n * (n + 1)) / 2;
+	printf("Sum of the series: ");
+	for (i =1;i <= n;i++) {
+		if (i!=n)
+		             printf("%d + ",i); else
+		             printf("%d = %d ",i,sum);
+	}
+	return 0;
+}
